@@ -2,7 +2,6 @@
     <v-app>
         <v-container fluid class="pa-0 fill-height">
             <v-navigation-drawer app v-model="drawer" v-if="!hideNavigator">
-                <LeftMenu />
             </v-navigation-drawer>
 
             <v-app-bar app id="top-bar">
@@ -21,10 +20,9 @@
 
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator'
-    import LeftMenu from "./LeftMenu.vue";
 
     @Component({
-        components: {LeftMenu}
+        components: {}
     })
     export default class ViewContainer extends Vue {
         @Prop({type: Boolean, default: false})

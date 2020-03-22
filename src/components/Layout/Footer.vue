@@ -22,4 +22,35 @@
 </script>
 
 <style lang="scss" scoped>
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-self: center;
+
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+
+        background: #101010;
+        text-align: center;
+        color: transparentize(white, .5);
+
+        & > * {
+            line-height: 1.5;
+            padding: .5rem .7rem;
+        }
+
+        .copyright {
+            display: block;
+            margin: 0;
+        }
+
+        .social{
+            padding : 10px 0;
+            font-size : 1.5rem;
+            a {
+                margin : 0 10px;
+            }
+        }
+    }
 </style>

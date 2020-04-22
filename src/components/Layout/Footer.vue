@@ -4,9 +4,9 @@
             <i class="far fa-copyright"></i> Copyright Pierre LEJEUNE, tous droits réservés.
         </p>
         <div class="social">
-            <a href="https://github.com/darkanakin41/" target="_blank" class="gitlab"><i class="fab fa-github"></i></a>
-            <a href="https://twitter.com/dark_csgo" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/pierre-lejeune/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a class="gitlab" @click.prevent="openUrl('https://github.com/darkanakin41/')"><i class="fab fa-github"></i></a>
+            <a class="twitter" @click.prevent="openUrl('https://twitter.com/dark_csgo')"><i class="fab fa-twitter"></i></a>
+            <a class="linkedin" @click.prevent="openUrl('https://www.linkedin.com/in/pierre-lejeune/')"><i class="fab fa-linkedin-in"></i></a>
         </div>
     </v-footer>
 </template>
@@ -18,6 +18,15 @@
         components: {}
     })
     export default class TopBarContent extends Vue {
+
+        openUrl(url: string) {
+            if (process.versions['electron'] !== undefined) {
+                const {shell} = require('electron')
+                shell.openExternal(url)
+            }else{
+                window.open(url)
+            }
+        }
     }
 </script>
 
@@ -45,11 +54,12 @@
             margin: 0;
         }
 
-        .social{
-            padding : 10px 0;
-            font-size : 1.5rem;
+        .social {
+            padding: 10px 0;
+            font-size: 1.5rem;
+
             a {
-                margin : 0 10px;
+                margin: 0 10px;
             }
         }
     }

@@ -41,6 +41,7 @@
   ],
   "typeRoots": [
     "./node_modules/@types",
+    "./node_modules/drivelist/js",
     "./node_modules/vuetify/types"
   ]
 }
